@@ -1,5 +1,7 @@
 // ignore_for_file: unused_field, prefer_final_fields, prefer_const_constructors, empty_statements, unused_import
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_2/produto_repository.dart';
@@ -145,15 +147,16 @@ class _FormExerciseState extends State<FormExercise> {
                             onPressed: () {
                               if (_formKey1.currentState!.validate()) {
                                 setState(() {
-                                  codigo = _codigo.text;
+                                
 
                                   nome = _nome.text;
                                  
                                   quantidade = int.parse(_quantidade.text);
+                                   codigo = int.parse(_codigo.text) as String;
                                   preco = double.parse(_preco.text);
 
-                                  Produto produto = Produto.produto(
-                                      nome, quantidade as String, codigo as int?, preco, codigo: '');
+                                  Produto produto = Produto(
+                                      nome, quantidade , codigo as int , preco as int);
                               
                                   produtoRepo.addProduto(produto);
 
@@ -165,11 +168,6 @@ class _FormExerciseState extends State<FormExercise> {
                                   
                                   });
 
-
-                               
-
-
-          
                                   ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                           content: Text(

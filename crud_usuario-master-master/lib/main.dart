@@ -4,7 +4,7 @@ import 'package:flutter_application_2/lista.dart';
 
 import 'formularioxer.dart';
 import 'home_page.dart';
-import 'login.dart';
+
 
 void main() {
   print("a");
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/HomePage': (context) => const HomePage(),
         '/FormExercise': (context) => const FormExercise(),
-        '/Login': (context) => const Login(),
+    
         '/Consulta': (context) => const Lista(),
       },
       initialRoute: '/HomePage'

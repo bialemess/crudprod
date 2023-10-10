@@ -117,9 +117,9 @@ class _Lista extends State<Lista> {
                                             actions: [
                                               TextButton(
                                                   onPressed: () {
-                                                    Produto user = produtoRepo[index];
+                                                    Produto produto = produtoRepo[index];
                                                     ProdutoRepository.removeProduto(
-                                                        user);
+                                                        produto);
                                                     update(nome);
                                                     setState(() {});
                                                     Navigator.pop(context);

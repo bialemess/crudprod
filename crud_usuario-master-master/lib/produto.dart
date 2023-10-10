@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_final_fields
 
 class Produto {
-  String? _nome;
-  String _codigo;
+  String _nome;
+  int _codigo;
 
-  int? _quantidade;
-  double? _preco;
+  int _quantidade;
+  int _preco;
 
 
   Produto(this._nome, this._codigo, this._quantidade, this._preco);
@@ -25,7 +25,7 @@ class Produto {
       );
 
       
-  Produto.produto(this._nome, this._codigo, this._quantidade, this._preco, {required String codigo});
+  Produto.produto(this._nome, this._codigo, this._quantidade, this._preco);
 
   Produto.produtoupdate2(
       this._nome,

@@ -133,7 +133,7 @@ class _ProdutoEditState extends State<ProdutoEdit> {
             int quantidade = int.parse(_quantidadeEdit.text);
             String codigo = _codigoEdit.text;
             double preco = double.parse(_precoEdit.text);
-            Produto produto = new Produto.produtoupdate(nome, quantidade as String, codigo as int?, preco);
+            Produto produto = new Produto.produtoupdate(nome, quantidade , codigo as int, preco as int);
             ProdutoRepository.getProdutos()[widget.index] = produto;
 
 
@@ -142,10 +142,7 @@ class _ProdutoEditState extends State<ProdutoEdit> {
             Navigator.pushNamed(context, '/Consulta');
 
 
-           // User user = new User.userupdate(nome,email,username,idade,senha);
-            //UserRepository.getUsers()[widget.index] = user;
-
-            mostrarMsgSucesso();
+      
 
                 
           }
