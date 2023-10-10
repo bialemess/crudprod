@@ -90,7 +90,7 @@ class _Lista extends State<Lista> {
               return ListTile(
                   leading: const Icon(Icons.add_box),
                   title: Text(search[index].nome),
-                  subtitle: Text(search[index].codigo),
+                  subtitle: Text(search[index].codigo.toString()),
                   trailing: SizedBox(
                       width: 70,
                       child: Row(

@@ -147,20 +147,31 @@ class _FormExerciseState extends State<FormExercise> {
                                 backgroundColor:
                                     MaterialStateProperty.all(Colors.grey)),
                             onPressed: () {
+
+
                               if (_formKey1.currentState!.validate()) {
                                 setState(() {
                                 
 
-                                  nome = _nome.text;
+                                 String nome = _nome.text;
                                  
-                                  quantidade = int.parse(_quantidade.text);
-                                   codigo = int.parse(_codigo.text) as String;
-                                  preco = double.parse(_preco.text);
+                                 int quantidade = int.parse(_quantidade.text);
+                                 int   codigo = int.parse(_codigo.text);
+                                int preco = int.parse(_preco.text);
 
                                   Produto produto = Produto(
-                                      nome, quantidade , codigo as int , preco as int);
+                                      nome, quantidade , codigo , preco);
                               
                                   produtoRepo.addProduto(produto);
+
+
+
+
+
+
+
+
+
 
                                   setState(() {
                                     _codigo.text = "";

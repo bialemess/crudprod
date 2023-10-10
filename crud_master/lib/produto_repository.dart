@@ -24,15 +24,7 @@ class ProdutoRepository {
     return _produtos;
   }
 
-  bool login(Produto produto) {
-    for (var i = 0; i < _produtos.length; i) {
-      if (_produtos[i].codigo == produto.codigo &&
-          _produtos[i].nome == produto.nome) {
-        return true;
-      }
-    }
-    return false;
-  }
+
 
   static void removeProduto(Produto nome) {
     _produtos.remove(nome);
@@ -41,8 +33,9 @@ class ProdutoRepository {
 
   void updateProdutos(Produto produto, int index) {
     _produtos[index].nome = produto.nome;
-    _produtos[index].codigo = produto.codigo;
+  
     _produtos[index].quantidade = produto.quantidade;
+      _produtos[index].codigo = produto.codigo;
     _produtos[index].preco = produto.preco;
   }
 }

@@ -31,14 +31,14 @@ class _ProdutoEditState extends State<ProdutoEdit> {
   String nome = "";
   int quantidade = 0;
   String codigo = "";
-  double preco = 0.0;
+  double preco = 0;
 
   GlobalKey<FormState> _formKey2 = new GlobalKey<FormState>();
 
   void init() {
     _nomeEdit.text = widget.produto.nome;
     _quantidadeEdit.text = widget.produto.quantidade.toString();
-    _codigoEdit.text = widget.produto.codigo;
+    _codigoEdit.text = widget.produto.codigo.toString();
     _precoEdit.text = widget.produto.preco.toString();
    
   }
@@ -67,24 +67,6 @@ class _ProdutoEditState extends State<ProdutoEdit> {
         
 
 
-        TextFormField(
-            controller: _codigoEdit,
-            validator: (value) {
-              if (value!.isEmpty) {
-                return 'O código não pode ser vazio.';
-              } else {
-                if (value.length < 3) {
-                  return 'O código deve ter mais de 3 caracteres.';
-                }
-              }
-              return null;
-            },
-            decoration: InputDecoration(
-              labelText: 'Código',
-              hintText: 'Digite o código do produto',
-              border: OutlineInputBorder(),
-            )),
-
 
 
         TextFormField(
@@ -110,10 +92,28 @@ class _ProdutoEditState extends State<ProdutoEdit> {
             )),
 
 
+        TextFormField(
+            controller: _codigoEdit,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return 'O código não pode ser vazio.';
+              } else {
+                if (value.length < 3) {
+                  return 'O código deve ter mais de 3 caracteres.';
+                }
+              }
+              return null;
+            },
+            decoration: InputDecoration(
+              labelText: 'Código',
+              hintText: 'Digite o código do produto',
+              border: OutlineInputBorder(),
+            )),
+
 
         TextFormField(
             controller: _precoEdit,
-            obscureText: true,
+          
             validator: (value) {
               if (value!.isEmpty) {
                 return 'O preço não pode ser vazia.';
@@ -133,9 +133,9 @@ class _ProdutoEditState extends State<ProdutoEdit> {
           if (_formKey2.currentState!.validate()) {
             String nome = _nomeEdit.text;
             int quantidade = int.parse(_quantidadeEdit.text);
-            String codigo = _codigoEdit.text;
-            double preco = double.parse(_precoEdit.text);
-            Produto produto = new Produto.produtoupdate(nome, quantidade , codigo as int, preco as int);
+            int codigo = int.parse(_codigoEdit.text);
+            int preco = int.parse(_precoEdit.text);
+            Produto produto = new Produto.produtoupdate(nome, quantidade ,codigo, preco);
             ProdutoRepository.getProdutos()[widget.index] = produto;
 
 
