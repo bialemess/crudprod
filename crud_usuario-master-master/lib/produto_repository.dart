@@ -1,7 +1,9 @@
-import 'package:flutter_application_2/produto.dart';
+
 
 
 // ignore_for_file: unused_field, prefer_final_fields, unnecessary_this, avoid_print
+import 'produto.dart';
+
 class ProdutoRepository {
   static List<Produto> _produtos = [];
 

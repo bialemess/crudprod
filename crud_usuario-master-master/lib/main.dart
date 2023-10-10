@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/lista.dart';
+
 
 import 'formularioxer.dart';
 import 'home_page.dart';
+import 'lista.dart';
 
 
 void main() {

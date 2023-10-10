@@ -1,9 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/produto_repository.dart';
-import 'package:flutter_application_2/produto.dart';
+
 
 import 'Change.dart';
+import 'produto.dart';
+import 'produto_repository.dart';
 
 
 class Lista extends StatefulWidget {

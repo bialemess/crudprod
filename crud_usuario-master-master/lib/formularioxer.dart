@@ -4,8 +4,10 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_2/produto_repository.dart';
-import 'package:flutter_application_2/produto.dart';
+
+import 'produto.dart';
+import 'produto_repository.dart';
+
 
 class FormExercise extends StatefulWidget {
   const FormExercise({super.key});
